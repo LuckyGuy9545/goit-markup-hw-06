@@ -31,7 +31,6 @@ body {
   color: var(--color_grey);
   background-color: var(--color_white);
   letter-spacing: 0.03em;
-  
 }
 
 a {
@@ -254,8 +253,6 @@ ul {
 .button_headline:focus {
   background-color: var(--blue_button);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
-  border: none;
   transition: background-color 250ms var(--cubic_bezier);
 }
 
@@ -290,6 +287,7 @@ ul {
   min-width: 528px;
   min-height: 581px;
   background-color: var(--color_white);
+  border-radius: 4px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   transition: transform 250ms var(--cubic_bezier);
@@ -320,9 +318,57 @@ ul {
 .close_btn:hover,
 .close_btn:focus {
   color: var(--brand_style);
-  
+
   transition: background-color 250ms var(--cubic_bezier),
     color 250ms var(--cubic_bezier);
+}
+
+/*---- Form in modal window ----*/
+
+.modal_fieldset {
+  display: flex;
+  flex-direction: column;
+  border: transparent;
+
+  margin: 0;
+  margin-top: 40px;
+  padding: 0px 40px;
+}
+
+.modal_form_legend {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+
+  color: #212121;
+  margin-bottom: 30px;
+}
+
+.modal_input_name,
+.modal_input_tel,
+.modal_input_email,
+.modal_input_comment {
+  margin-bottom: 10px;
+  height: 40px;
+  padding-left: 42px;
+}
+
+.form_submit_btn {
+  margin: 0 auto;
+}
+
+.form_fieldset_div {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/*---- Modal Form Icons ----*/
+.modal_form_icon_name {
+  position: absolute;
+  top: 11px;
+  left: 12px;
 }
 
 /* Section #2*/
@@ -700,7 +746,7 @@ ul h3 {
 
 /* ---- Text on img + hover ----*/
 .our_jobs_link:hover .our_jobs_overlay,
-.our_jobs_link:focus .our_jobs_overlay{
+.our_jobs_link:focus .our_jobs_overlay {
   transform: translateY(0);
 }
 
@@ -727,7 +773,7 @@ ul h3 {
   transform: translate(-50%, -50%);
 
   overflow: hidden;
-  
+
   width: 322px;
   height: 168px;
   text-decoration: none;
@@ -828,6 +874,7 @@ ul h3 {
 
 .joinus_block {
   width: 206px;
+  margin-right: 93px;
 }
 .joinus_socials {
   display: flex;
@@ -855,4 +902,92 @@ ul h3 {
 
   transition: color 250ms var(--cubic_bezier),
     background-color 250ms var(--cubic_bezier);
+}
+
+/* ---- Sign Up Div ---- */
+
+.sign_up_block {
+  width: 570px;
+}
+
+.sign_up_text {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+
+  color: #ffffff;
+
+  margin-bottom: 20px;
+}
+.email_form_field {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.email_form_field:focus-within .signup_form_email_text {
+  opacity: 0;
+}
+
+.signup_input_email:not(:placeholder-shown) + .signup_form_email_text {
+  opacity: 0;
+}
+
+.signup_input_email {
+  width: 358px;
+  height: 50px;
+
+  background-color: transparent;
+  color: var(--color_white);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  padding-left: 16px;
+}
+
+.signup_form_email_text {
+  position: absolute;
+  top: 15px;
+  left: 16px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.signup_submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signup_submit,
+.form_submit_btn {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 30px;
+  letter-spacing: 0.06em;
+
+  width: 200px;
+  height: 50px;
+  background-color: var(--brand_style);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border: transparent;
+  border-radius: 4px;
+  color: var(--color_white);
+  cursor: pointer;
+}
+
+.signup_submit:hover,
+.signup_submit:focus,
+.form_submit_btn:hover,
+.form_submit_btn:focus {
+  background-color: var(--blue_button);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  transition: background-color 250ms var(--cubic_bezier);
+}
+
+.form_footer_icon {
+  margin-left: 10px;
 }
