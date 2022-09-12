@@ -284,7 +284,7 @@ ul {
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
 
-  min-width: 528px;
+  width: 528px;
   min-height: 581px;
   background-color: var(--color_white);
   border-radius: 4px;
@@ -326,9 +326,10 @@ ul {
 /*---- Form in modal window ----*/
 
 .modal_fieldset {
+  border: transparent;
+
   display: flex;
   flex-direction: column;
-  border: transparent;
 
   margin: 0;
   margin-top: 40px;
@@ -341,17 +342,34 @@ ul {
   line-height: 1.15;
   text-align: center;
 
-  color: #212121;
-  margin-bottom: 30px;
+  color: var(--color_black);
+  margin-bottom: 12px;
 }
 
-.modal_input_name,
-.modal_input_tel,
-.modal_input_email,
-.modal_input_comment {
+.modal_input {
   margin-bottom: 10px;
   height: 40px;
   padding-left: 42px;
+  cursor: pointer;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+}
+
+.modal_input:hover {
+  border-color: var(--brand_style);
+}
+
+.modal_input_comment {
+  height: 120px;
+  padding: 12px 16px;
+  resize: none;
+  cursor: text;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+}
+
+.modal_input_comment:hover {
+  border-color: var(--brand_style);
 }
 
 .form_submit_btn {
@@ -364,11 +382,105 @@ ul {
   position: relative;
 }
 
+.label_heading,
+.modal_input_comment {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+
+  display: block;
+  color: var(--color_grey);
+  margin-bottom: 4px;
+}
+
+.modal_comment_div {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.comment_placeholder {
+  position: absolute;
+  top: 12px;
+  left: 16px;
+}
+
+.term_of_use_text {
+  margin-right: ;
+}
+
+.term_of_use_text,
+.term_of_use_link {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--color_grey);
+  margin: 0;
+}
+
+.term_of_use_link {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--brand_style);
+  text-decoration: underline;
+}
+
+.term_of_use_div {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.term_of_use_label {
+  display: flex;
+  align-items: center;
+}
+
+/*---- Custom Checker ----*/
+
+.term_of_use_checkbox {
+  appearance: none;
+  position: absolute;
+}
+.term_of_use_checkbox:checked + .term_of_use_checkicon {
+  background-color: var(--brand_style);
+  border-color: transparent;
+  background-image: url(../image/icon\ check.svg);
+  background-size: contain;
+  background-origin: border-box;
+}
+
+.term_of_use_checkicon {
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+
+  cursor: pointer;
+  border: 2px solid var(--color_black);
+  border-radius: 2px;
+  margin-right: 10px;
+}
+
 /*---- Modal Form Icons ----*/
-.modal_form_icon_name {
+.fieldset_div {
+  position: relative;
+}
+
+.modal_form_icon {
   position: absolute;
   top: 11px;
   left: 12px;
+  fill: currentColor;
+  transition: fill 250ms var(--cubic_bezier);
+}
+
+.form_fieldset_div:focus-within > .modal_form_icon,
+.form_fieldset_div:hover > .modal_form_icon {
+  fill: var(--brand_style);
+  transition: fill 250ms var(--cubic_bezier);
 }
 
 /* Section #2*/
@@ -716,6 +828,13 @@ ul h3 {
   border-top: transparent;
 }
 
+.our_jobs_text_after .our_jobs_description {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1;
+  color: var(--color_grey);
+}
+
 .our_jobs h2 {
   font-weight: 700;
   font-size: 18px;
@@ -926,14 +1045,6 @@ ul h3 {
   justify-content: space-between;
 }
 
-.email_form_field:focus-within .signup_form_email_text {
-  opacity: 0;
-}
-
-.signup_input_email:not(:placeholder-shown) + .signup_form_email_text {
-  opacity: 0;
-}
-
 .signup_input_email {
   width: 358px;
   height: 50px;
@@ -946,15 +1057,13 @@ ul h3 {
   padding-left: 16px;
 }
 
-.signup_form_email_text {
-  position: absolute;
-  top: 15px;
-  left: 16px;
+.signup_input_email::placeholder {
   font-weight: 400;
   font-size: 16px;
   line-height: 1.25;
-  color: rgba(255, 255, 255, 0.6);
+  color: color: rgba(255, 255, 255, 0.6);
 }
+
 
 .signup_submit {
   display: flex;
