@@ -286,6 +286,7 @@ ul {
 
   width: 528px;
   min-height: 581px;
+  padding: 40px;
   background-color: var(--color_white);
   border-radius: 4px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -332,8 +333,7 @@ ul {
   flex-direction: column;
 
   margin: 0;
-  margin-top: 40px;
-  padding: 0px 40px;
+  padding: 0;
 }
 
 .modal_form_legend {
@@ -347,7 +347,6 @@ ul {
 }
 
 .modal_input {
-  margin-bottom: 10px;
   height: 40px;
   padding-left: 42px;
   cursor: pointer;
@@ -355,11 +354,15 @@ ul {
   border-radius: 4px;
 }
 
-.modal_input:hover {
+.modal_input:hover,
+.modal_input:focus {
   border-color: var(--brand_style);
+  outline: none;
 }
 
 .modal_input_comment {
+  letter-spacing: 0.01em;
+
   height: 120px;
   padding: 12px 16px;
   resize: none;
@@ -368,8 +371,10 @@ ul {
   border-radius: 4px;
 }
 
-.modal_input_comment:hover {
+.modal_input_comment:hover,
+.modal_input_comment:focus {
   border-color: var(--brand_style);
+  outline: none;
 }
 
 .form_submit_btn {
@@ -382,8 +387,7 @@ ul {
   position: relative;
 }
 
-.label_heading,
-.modal_input_comment {
+.label {
   font-weight: 400;
   font-size: 12px;
   line-height: 1.16;
@@ -391,6 +395,11 @@ ul {
 
   display: block;
   color: var(--color_grey);
+  margin-bottom: 10px;
+}
+
+.label_heading {
+  display: inline-block;
   margin-bottom: 4px;
 }
 
